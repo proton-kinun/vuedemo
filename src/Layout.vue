@@ -65,8 +65,6 @@ body {
   }
 
   nav {
-    justify-content: end;
-
     ul {
       list-style-type: none;
       display: grid;
