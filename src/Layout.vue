@@ -8,6 +8,7 @@
           <li><router-link to="/" exact>Úvod</router-link></li>
           <li><router-link to="/join" exact>Registrácia</router-link></li>
           <li><router-link to="/login" exact>Prihlásenie</router-link></li>
+          <li><router-link to="/heroes" exact>SW Heroes</router-link></li>
         </ul>
       </nav>
     </header>
