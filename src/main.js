@@ -1,6 +1,8 @@
 import Vue from 'vue'
-import Layout from '@/Layout.vue'
+import router from '@/plugins/router'
+import Layout from '@/Layout'
 
 new Vue({
-  render: h => h(Layout),
+  router,
+  render: h => h(Layout)
 }).$mount('#app')
