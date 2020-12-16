@@ -5,21 +5,27 @@
       <h1>Vue App</h1>
       <nav>
         <ul>
-          <li class="active"><a href="#">Úvod</a></li>
-          <li><a href="#">Registrácia</a></li>
-          <li><a href="#">Prihlásenie</a></li>
+          <li class="active"><a href="/">Úvod</a></li>
+          <li><a href="/register">Registrácia</a></li>
+          <li><a href="/login">Prihlásenie</a></li>
         </ul>
       </nav>
     </header>
-    <main class="app-content">
-      <h1>Sem budú vykreslené obsahy stránok</h1>
+    <main>
+      <page-main />
     </main>
   </div>
 </template>
 
 <script>
+import PageMain from '@/views/PageMain'
+
 export default {
-  name: 'Layout'
+  name: 'Layout',
+
+  components: {
+    PageMain
+  }
 }
 </script>
 
@@ -46,25 +52,29 @@ body {
 }
 
 .app-header {
+  position: relative;
   padding: 0 1.6rem;
   background-color: darkslateblue;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
-  place-content: center start;
+  grid-template-columns: min-content;
   gap: 1.6rem;
 
   svg {
+    place-self: center start;
     width: calc(6.4rem - 2.4rem);
     height: calc(6.4rem - 2.4rem);
   }
 
   h1 {
+    place-self: center start;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
   }
 
   nav {
+    place-self: center end;
+
     ul {
       list-style-type: none;
       display: grid;
@@ -86,15 +96,6 @@ body {
         }
       }
     }
-  }
-}
-
-.app-content {
-  display: grid;
-  place-items: center center;
-
-  h1 {
-    font-family: Arial, Helvetica, sans-serif;
   }
 }
 </style>
