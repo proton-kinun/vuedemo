@@ -5,14 +5,16 @@
       <h1>Vue App</h1>
       <nav>
         <ul>
-          <li class="active"><a href="#">Úvod</a></li>
-          <li><a href="#">Registrácia</a></li>
-          <li><a href="#">Prihlásenie</a></li>
+          <li><router-link to="/" exact>Úvod</router-link></li>
+          <li><router-link to="/join" exact>Registrácia</router-link></li>
+          <li><router-link to="/login" exact>Prihlásenie</router-link></li>
         </ul>
       </nav>
     </header>
-    <main class="app-content">
-      <h1>Sem budú vykreslené obsahy stránok</h1>
+    <main>
+      <transition name="fade" appear mode="out-in">
+        <router-view />
+      </transition>
     </main>
   </div>
 </template>
@@ -50,22 +52,23 @@ body {
   background-color: darkslateblue;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
-  place-content: center start;
+  grid-template-columns: min-content;
   gap: 1.6rem;
 
   svg {
+    place-self: center start;
     width: calc(6.4rem - 2.4rem);
     height: calc(6.4rem - 2.4rem);
   }
 
   h1 {
+    place-self: center start;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
   }
 
   nav {
-    justify-content: end;
+    place-self: center end;
 
     ul {
       list-style-type: none;
@@ -83,7 +86,7 @@ body {
           color: white;
         }
 
-        &.active a, &:hover a {
+        &:hover a, .router-link-active {
           background-color: cornflowerblue;
         }
       }
@@ -91,12 +94,11 @@ body {
   }
 }
 
-.app-content {
-  display: grid;
-  place-items: center center;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .25s;
+}
 
-  h1 {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
