@@ -48,7 +48,6 @@ body {
 }
 
 .app-header {
-  position: relative;
   padding: 0 1.6rem;
   background-color: darkslateblue;
   display: grid;
