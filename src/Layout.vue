@@ -5,27 +5,23 @@
       <h1>Vue App</h1>
       <nav>
         <ul>
-          <li class="active"><a href="/">Úvod</a></li>
-          <li><a href="/register">Registrácia</a></li>
-          <li><a href="/login">Prihlásenie</a></li>
+          <li><router-link to="/" exact>Úvod</router-link></li>
+          <li><router-link to="/join" exact>Registrácia</router-link></li>
+          <li><router-link to="/login" exact>Prihlásenie</router-link></li>
         </ul>
       </nav>
     </header>
     <main>
-      <page-main />
+      <transition name="fade" appear mode="out-in">
+        <router-view />
+      </transition>
     </main>
   </div>
 </template>
 
 <script>
-import PageMain from '@/views/PageMain'
-
 export default {
-  name: 'Layout',
-
-  components: {
-    PageMain
-  }
+  name: 'Layout'
 }
 </script>
 
@@ -91,11 +87,19 @@ body {
           color: white;
         }
 
-        &.active a, &:hover a {
+        &:hover a, .router-link-active {
           background-color: cornflowerblue;
         }
       }
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .25s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
