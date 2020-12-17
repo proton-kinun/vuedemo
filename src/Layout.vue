@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dense dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+        aria-label="zobrazuje menu"
+      >
         <v-icon>{{ iconMenu }}</v-icon>
       </v-app-bar-nav-icon>
 
@@ -19,7 +22,7 @@
       </v-tooltip>
     </v-app-bar>
 
-    <v-navigation-drawer absolute temporary app tag="nav" v-model="drawer">
+    <v-navigation-drawer absolute temporary app tag="nav" v-model="drawer" id="drawer">
       <template #prepend>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -97,5 +100,8 @@ export default {
 @font-face {
   font-family: 'Open Sans';
   src: url('./assets/fonts/OpenSans-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 </style>
