@@ -1,7 +1,11 @@
 <template>
-  <div class="page-join">
-    <h1>Tu bude obsah stránky registrácie</h1>
-  </div>
+  <v-container class="fill-height">
+    <v-row>
+      <v-col>
+        <h1 class="text-center">Tu bude registračný formulár</h1>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -9,16 +13,3 @@ export default {
   name: 'PageJoin'
 }
 </script>
-
-<style lang="scss" scoped>
-.page-join {
-  min-height: 100%;
-
-  display: grid;
-  place-items: center center;
-
-  h1 {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-}
-</style>
