@@ -28,13 +28,13 @@ export default {
     return {
       heroes: [],
       isLoading: false,
+      endpoint: 'https://swapi.dev/api/people/',
       headers: [
         { text: 'Meno', value: 'name', sortable: true },
         { text: 'Výška', value: 'height', sortable: true },
         { text: 'Hmotnosť', value: 'mass', sortable: true },
         { text: 'Rok narodenia', value: 'birth_year', sortable: true }
-      ],
-      endpoint: 'https://swapi.dev/api/people/'
+      ]
     }
   },
 

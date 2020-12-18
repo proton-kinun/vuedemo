@@ -1,10 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dense dark>
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
-        aria-label="zobrazuje menu"
-      >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" aria-label="zobrazuje menu">
         <v-icon>{{ iconMenu }}</v-icon>
       </v-app-bar-nav-icon>
 
@@ -35,9 +32,7 @@
             <v-list-item-subtitle>
               <v-tooltip bottom>
                 <template v-slot:activator="{ on, attrs }">
-                  <span v-bind="attrs" v-on="on">
-                    prihlásený ako {{ userName }}
-                  </span>
+                  <span v-bind="attrs" v-on="on">prihlásený ako {{ userName }}</span>
                 </template>
                 <span>prihlásený ako {{ userName }}</span>
               </v-tooltip>
@@ -46,7 +41,7 @@
         </v-list-item>
       </template>
 
-      <v-divider></v-divider>
+      <v-divider />
 
       <v-list dense>
         <v-list-item
@@ -95,13 +90,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@font-face {
-  font-family: 'Open Sans';
-  src: url('./assets/fonts/OpenSans-Regular.ttf');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-</style>
